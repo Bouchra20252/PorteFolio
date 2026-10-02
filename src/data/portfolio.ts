@@ -14,7 +14,7 @@ export const profile = {
   phone: "+212 674 437 322",
   phoneHref: "+212674437322",
   cvPath: "/cv-simali-bouchra.pdf",
-  availability: "Open to a 6-month PFE internship — February 2027",
+  availability: "Open to a 6-month PFE internship — Starting February 2027",
   // Leave a link empty ("") to hide it from the site.
   links: {
     github: "",
@@ -32,7 +32,7 @@ export const profile = {
 export const stats = [
   { value: "2027", label: "Expected graduation" },
   { value: "1", label: "Industrial internship" },
-  { value: "4+", label: "Academic projects" },
+  { value: "6+", label: "Academic projects" },
   { value: "6", label: "Certifications" },
 ];
 
@@ -73,57 +73,152 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Book Recommendation System",
-    category: "NLP · Machine Learning",
-    period: "Mar 2026 — May 2026",
-    summary:
-      "A content-based NLP recommendation engine that generates personalized book suggestions.",
-    points: [
-      "Data engineering on ~10k books: cleaning, missing-value handling, feature engineering (title, author, genres) and reliability filtering (>1,000 ratings).",
-      "Modeling and ranking with TF-IDF, cosine similarity and rating-based re-ranking.",
-      "Model serialization with Pickle for fast and scalable execution.",
-    ],
-    stack: ["Python", "Pandas", "NumPy", "Scikit-Learn", "Matplotlib", "Seaborn", "Pickle"],
-  },
-  {
-    title: "Biblio Archivist",
-    category: "Mobile Application",
-    period: "Oct 2025 — Dec 2025",
-    summary:
-      "A mobile application dedicated to the management and reading of digital books.",
-    points: [
-      "Smooth navigation, interactive library and detailed book browsing.",
-      "Enhanced reading module with visual customization and profile-based reading progress tracking.",
-      "Dynamic bookmarks, favorites management and quick access to saved reading positions.",
-    ],
-    stack: ["React Native", "MongoDB", "JavaScript", "HTML", "CSS", "Bootstrap"],
-  },
-  {
-    title: "AI Compiler",
-    category: "AI · Developer Tools",
-    period: "Apr 2025 — May 2025",
-    summary:
-      "A multi-language online compiler with AI-powered error assistance.",
-    points: [
-      "Runs Python, Java and C++ via file upload or direct input, with automatic language detection and instant results.",
-      "Clear error messages, simplified explanations and intelligent correction suggestions.",
-      "TF-IDF and lexical processing on error history to improve recommendations over time.",
-    ],
-    stack: ["Python", "Java", "C++", "TF-IDF", "NLP"],
-  },
-  {
-    title: "Ad_On — Classified Ads Website",
-    category: "Full-Stack Web",
-    period: "Dec 2024 — Feb 2025",
-    summary:
-      "A full-stack platform for real-time publishing, browsing and management of classified listings.",
-    points: [
-      "User profiles and integrated messaging between buyers and sellers.",
-      "Advanced search and filtering by category, keywords, price, location and product type.",
-      "Listing moderation, user management and protection of sensitive data.",
-    ],
-    stack: ["Django", "Python", "MySQL", "JavaScript", "HTML/CSS", "Bootstrap"],
-  },
+  title: "Book Recommendation System",
+  category: "NLP · Machine Learning",
+  period: "Mar 2026 — May 2026",
+  summary:
+    "A personalized book discovery system combining user preferences, NLP and content-based recommendation to generate relevant book suggestions.",
+  points: [
+    "Built an end-to-end recommendation pipeline covering data preprocessing, feature engineering, NLP representation and similarity-based ranking.",
+    "Engineered book metadata into unified textual representations and applied TF-IDF to transform book characteristics into numerical vectors.",
+    "Implemented cosine similarity to identify related books and generate ranked Top-5 recommendations based on content similarity.",
+    "Designed an interactive questionnaire that translates user preferences into personalized recommendation criteria.",
+    "Developed a Streamlit application integrating the complete recommendation workflow and reusable serialized model artifacts.",
+  ],
+  stack: [
+    "Python",
+    "Pandas",
+    "NumPy",
+    "Scikit-Learn",
+    "NLP",
+    "TF-IDF",
+    "Streamlit",
+    "Pickle",
+  ],
+},
+{
+  title: "MediaScope",
+  category: "Data Engineering · Big Data",
+  period: "2026",
+  summary:
+    "An end-to-end Data Engineering platform for collecting, processing, storing and analyzing news data using a Medallion Architecture.",
+  points: [
+    "Built an end-to-end ETL pipeline for collecting and processing news articles from multiple international sources through Python-based web scraping.",
+    "Designed a Bronze/Silver/Gold Medallion Architecture using MinIO as a Data Lake for raw, cleaned and analytical data.",
+    "Developed Apache Airflow workflows to orchestrate scraping, cleaning and transformation with scheduled execution and retry mechanisms.",
+    "Containerized the data infrastructure with Docker Compose, integrating Airflow, MinIO, MySQL and phpMyAdmin into a reproducible environment.",
+    "Developed an analytical dashboard for exploring news sources, topics, keywords, trends and historical distributions.",
+  ],
+  stack: [
+    "Python",
+    "Apache Airflow",
+    "MinIO",
+    "MySQL",
+    "Docker",
+    "Docker Compose",
+    "Parquet",
+    "Web Scraping",
+  ],
+},
+
+ {
+  title: "Predictive Maintenance System for Mining Equipment",
+  category: "Industrial AI · Machine Learning · Data Engineering",
+  period: "Jul 2026 — Present",
+  summary:
+    "An AI-based predictive maintenance system combining failure prediction, root-cause diagnosis, RUL estimation and real-time industrial monitoring.",
+  points: [
+    "Built an end-to-end predictive maintenance pipeline covering data preprocessing, feature engineering, failure prediction, root-cause analysis and Remaining Useful Life (RUL) estimation.",
+    "Developed the machine failure prediction component with AutoGluon, selecting XGBoost as the final model and achieving 0.97 accuracy, 0.946 ROC-AUC and 0.504 PR-AUC.",
+    "Designed a System of Systems approach integrating failure prediction, failure diagnosis and RUL estimation into a unified maintenance workflow.",
+    "Implemented real-time AI communication using MQTT, Mosquitto and Paho MQTT to transmit machine measurements and prediction results.",
+    "Built a Node-RED monitoring dashboard displaying machine status, failure probability, predicted failure type, RUL, root-cause confidence and maintenance recommendations.",
+  ],
+  stack: [
+    "Python",
+    "Pandas",
+    "NumPy",
+    "AutoGluon",
+    "XGBoost",
+    "Scikit-Learn",
+    "MQTT",
+    "Mosquitto",
+    "Node-RED",
+  ],
+},
+
+
+
+ {
+  title: "Biblio Archivist",
+  category: "Mobile Application · Backend",
+  period: "Oct 2025 — Dec 2025",
+  summary:
+    "A database-driven mobile library application for discovering, organizing and managing digital book collections.",
+  points: [
+    "Developed a mobile library interface with React Native for browsing, searching and exploring detailed book information.",
+    "Implemented a client-server architecture connecting the mobile application to backend services through REST API communication.",
+    "Integrated MongoDB for structured storage and retrieval of book data and metadata.",
+    "Designed a modular application structure with reusable components, navigation screens and dedicated service layers.",
+    "Applied software engineering principles to separate presentation, application logic and data management layers.",
+  ],
+  stack: [
+    "React Native",
+    "JavaScript",
+    "Node.js",
+    "MongoDB",
+    "REST API",
+    "npm",
+  ],
+},
+
+{
+  title: "KodexA Compiler",
+  category: "Software Engineering · Cloud & DevOps",
+  period: "2025",
+  summary:
+    "A secure multi-language online compiler platform combining automated language detection, REST APIs and Docker-isolated code execution.",
+  points: [
+    "Developed a web-based compiler supporting C++, Java and Python with direct code input and source-file upload.",
+    "Implemented automatic programming-language detection using file extensions and language-specific syntax patterns.",
+    "Designed a REST API architecture connecting the frontend, backend processing layer and code execution services.",
+    "Containerized code compilation and execution with Docker to isolate untrusted user-submitted programs from the main application environment.",
+    "Implemented structured compilation and runtime error handling to return execution results and actionable feedback to users.",
+  ],
+  stack: [
+    "Python",
+    "C++",
+    "Java",
+    "Docker",
+    "REST API",
+    "JavaScript",
+    "HTML/CSS",
+  ],
+},
+
+{
+  title: "Ad_On — Classified Ads & Marketplace Platform",
+  category: "Full-Stack Web · Django",
+  period: "Dec 2024 — Feb 2025",
+  summary:
+    "A full-stack Django marketplace platform for publishing, discovering and managing classified listings with integrated user communication.",
+  points: [
+    "Developed a complete classified-advertising platform with user authentication, profiles and advertisement lifecycle management.",
+    "Implemented CRUD workflows for listings with categories, pricing, locations, publication duration and multiple image uploads.",
+    "Built keyword search, advanced filtering and result sorting to support efficient advertisement discovery.",
+    "Integrated an internal messaging system with questions, seller communication and price negotiation around listings.",
+    "Implemented administration and moderation features for user management, permissions and platform content supervision.",
+  ],
+  stack: [
+    "Python",
+    "Django",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Django Templates",
+    "SQL",
+  ],
+}
 ];
 
 export const skills: { group: string; items: string[] }[] = [
